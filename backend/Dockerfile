@@ -1,6 +1,4 @@
-FROM node:lts-alpine
-
-RUN apk add --update --no-cache openssl1.1-compat
+FROM node:lts
 
 WORKDIR /usr/src/app
 
@@ -17,4 +15,4 @@ RUN npx prisma generate
 
 EXPOSE 5000
 
-CMD npm start
+CMD ["npm", "start"]
