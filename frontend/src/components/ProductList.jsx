@@ -5,7 +5,7 @@ import useSWR, { mutate } from 'swr'
 
 const ProductList = () => {
     const fetcher = async () => {
-        const response = await axios.get('http://localhost:5000/products')
+        const response = await axios.get('/products')
         return response.data
     }
 
@@ -15,7 +15,7 @@ const ProductList = () => {
     }
 
     const deleteProduct = async productId => {
-        await axios.delete(`http://localhost:5000/products/${productId}`)
+        await axios.delete(`/products/${productId}`)
         mutate('products')
     }
 

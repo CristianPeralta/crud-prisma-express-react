@@ -10,16 +10,16 @@ const EditProduct = () => {
 
     useEffect(() => {
         const getProductById = async () => {
-            const response = await axios.get(`http://localhost:5000/products/${id}`)
+            const response = await axios.get(`/products/${id}`)
             setName(response.data.name)
-            setPrice(response.data.price)
+            setPrice(response.data.price)   
         }
         getProductById()
     }, [id])
 
     const updateProduct = async e => {
         e.preventDefault()
-        await axios.patch(`http://localhost:5000/products/${id}`, { name: name, price: parseInt(price) })
+        await axios.patch(`/products/${id}`, { name: name, price: parseInt(price) })
         navigate('/')
     }
 

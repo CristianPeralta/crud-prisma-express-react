@@ -9,7 +9,7 @@ const AddProduct = () => {
 
     const saveProduct = async e => {
         e.preventDefault()
-        await axios.post('http://localhost:5000/products', { name: name, price: parseInt(price) })
+        await axios.post('/products', { name: name, price: parseInt(price) })
         navigate('/')
     }
 
